@@ -67,10 +67,10 @@
 
         Main {
             bindings = <
-&kp Q               &kp W         &kp E         &kp R                        &kp T                                                        &kp Y                   &kp U  &lt 6 I    &kp O    &kp P
+&lt_to_layer_0 7 Q  &kp W         &kp E         &kp R                        &kp T                                                        &kp Y                   &kp U  &kp I      &kp O    &kp P
 &mt LEFT_CONTROL A  &kp S         &kp D         &kp F                        &kp G             &kp S                       &kp MINUS      &kp H                   &kp J  &kp K      &kp L    &mt RIGHT_CONTROL DELETE
 &mt LEFT_SHIFT Z    &kp X         &kp C         &kp V                        &kp B             &kp TAB                     &kp LA(SPACE)  &kp N                   &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
-&kp LG(ESCAPE)      &kp LEFT_ALT  &kp LEFT_GUI  &lt_to_layer_0 1 LANGUAGE_2  &lt 5 LANGUAGE_1  &lt_to_layer_0 6 SPACE      &kp BACKSPACE  &lt_to_layer_0 7 ENTER                             &mkp LCLK
+&kp LG(ESCAPE)      &kp LEFT_ALT  &kp LEFT_GUI  &lt_to_layer_0 1 LANGUAGE_2  &lt 2 LANGUAGE_1  &lt_to_layer_0 3 SPACE      &kp BACKSPACE  &lt_to_layer_0 4 ENTER                             &mkp LCLK
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -98,10 +98,10 @@
 
         Other {
             bindings = <
-&kp         &kp LC(LG(LEFT_ARROW))  &kp LC(LG(UP_ARROW))  &kp LC(LG(RIGHT))  &kp                      &kp  &kp                 &kp LC(UP_ARROW)    &kp            &kp
-&kp K_COPY  &kp K_PASTE             &kp LS(LG(V))         &kp LC(LG(V))      &kp K_CUT  &kp      &kp  &kp  &kp LC(LEFT_ARROW)  &kp LC(DOWN_ARROW)  &kp LC(RIGHT)  &kp
-&kp         &kp                     &kp                   &kp LS(LG(N5))     &kp        &kp      &kp  &kp  &kp                 &kp                 &kp            &kp
-&kp         &kp                     &kp                   &kp                &kp        &kp      &kp  &kp                                                         &kp
+&trans      &kp LC(LG(LEFT_ARROW))  &kp LC(LG(UP_ARROW))  &kp LC(LG(RIGHT))  &trans                         &trans  &trans              &kp LC(UP_ARROW)    &trans         &trans
+&kp K_COPY  &kp K_PASTE             &kp LS(LG(V))         &kp LC(LG(V))      &kp K_CUT  &trans      &trans  &trans  &kp LC(LEFT_ARROW)  &kp LC(DOWN_ARROW)  &kp LC(RIGHT)  &trans
+&trans      &trans                  &trans                &kp LS(LG(N5))     &trans     &trans      &trans  &trans  &trans              &trans              &trans         &trans
+&trans      &trans                  &trans                &trans             &trans     &trans      &trans  &trans                                                         &trans
             >;
         };
 
