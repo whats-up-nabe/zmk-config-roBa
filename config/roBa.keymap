@@ -76,12 +76,12 @@
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
-        FUNCTION {
+        Symbol {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                       &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
-&trans  &trans  &trans  &trans  &trans  &trans      &kp F13  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
-&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans  &trans  &trans  &trans  &kp F11
-&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans                          &kp F12
+&kp SLASH        &kp ASTERISK  &kp MINUS      &kp PLUS      &kp EQUAL                        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LESS_THAN  &kp GREATER_THAN   &trans
+&kp EXCLAMATION  &kp AT_SIGN   &kp HASH       &kp DOLLAR    &kp PERCENT  &trans      &trans  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp SEMICOLON  &kp APOSTROPHE     &kp BACKSLASH
+&trans           &kp CARET     &kp AMPERSAND  &kp QUESTION  &kp INT_YEN  &trans      &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp COLON      &kp DOUBLE_QUOTES  &kp PIPE
+&trans           &trans        &trans         &trans        &trans       &trans      &trans  &trans                                                                         &trans
             >;
         };
 
