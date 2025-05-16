@@ -110,17 +110,17 @@
             bindings = <
 &trans      &kp LC(LG(LEFT_ARROW))  &kp LC(LG(UP_ARROW))  &kp LC(LG(RIGHT))  &trans                         &trans  &trans              &kp LC(UP_ARROW)    &trans         &trans
 &kp K_COPY  &kp K_PASTE             &kp LS(LG(V))         &kp LC(LG(V))      &kp K_CUT  &trans      &trans  &trans  &kp LC(LEFT_ARROW)  &kp LC(DOWN_ARROW)  &kp LC(RIGHT)  &trans
-&trans      &trans                  &trans                &kp LS(LG(N5))     &trans     &trans      &trans  &trans  &trans              &trans              &trans         &trans
+&trans      &trans                  &trans                &kp LS(LG(N5))     &trans     &trans      &trans  &trans  &kp K_BACK          &trans              &kp K_FORWARD  &trans
 &trans      &trans                  &trans                &trans             &trans     &trans      &trans  &trans                                                         &trans
             >;
         };
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans          &trans    &trans         &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1        &mkp MB3  &mkp MB2       &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &kp LA(K_BACK)  &trans    &kp K_FORWARD  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                           &trans
             >;
         };
 
