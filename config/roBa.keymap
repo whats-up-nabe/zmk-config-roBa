@@ -41,6 +41,16 @@
             bindings = <&kp EQUAL>;
             key-positions = <24 25>;
         };
+
+        back_with_JK {
+            bindings = <&kp K_BACK>;
+            key-positions = <18 19>;
+        };
+
+        forward_with_m, {
+            bindings = <&kp K_FORWARD>;
+            key-positions = <30 31>;
+        };
     };
 
     macros {
@@ -49,6 +59,13 @@
             #binding-cells = <1>;
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
+        };
+
+        control_command: control_command {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "CONTROL_COMMAND";
         };
 
         encoder_msc_down_up: encoder_msc_down_up {
@@ -70,6 +87,13 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        tap_dance_lang_change: tap_dance_lang_change {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_LANG_CHANGE";
+            #binding-cells = <0>;
+            bindings = <&kp LANGUAGE_1>, <&kp LANGUAGE_2>;
+        };
     };
 
     keymap {
@@ -77,10 +101,10 @@
 
         Main {
             bindings = <
-&mt TAB Q           &kp W         &kp E         &kp R                        &lt_to_layer_0 7 T                                                  &kp Y                   &kp U  &kp I               &kp O    &kp P
-&mt LEFT_CONTROL A  &kp S         &kp D         &kp F                        &kp G               &kp S                            &kp MINUS      &kp H                   &kp J  &lt_to_layer_0 5 K  &kp L    &mt LEFT_COMMAND DELETE
-&mt LEFT_SHIFT Z    &kp X         &kp C         &kp V                        &kp B               &kp LA(SPACE)                    &mkp LCLK      &kp N                   &kp M  &kp COMMA           &kp DOT  &mt LEFT_ALT SLASH
-&kp LG(ESCAPE)      &kp LEFT_ALT  &kp LEFT_GUI  &lt_to_layer_0 1 LANGUAGE_2  &lt 2 SPACE         &lt_to_layer_0 3 LANGUAGE_1      &kp BACKSPACE  &lt_to_layer_0 6 ENTER                                      &mkp RCLK
+&mt LS(SPACE) Q     &kp W                   &kp E         &kp R                   &lt_to_layer_0 7 T                                                           &kp Y                   &kp U  &kp I               &kp O    &kp P
+&mt LEFT_CONTROL A  &mt LC(LEFT_COMMAND) S  &kp D         &kp F                   &kp G               &kp S                            &kp MINUS               &kp H                   &kp J  &lt_to_layer_0 5 K  &kp L    &kp BACKSPACE
+&mt LEFT_SHIFT Z    &mt LS(LEFT_COMMAND) X  &kp C         &kp V                   &kp B               &kp LA(TAB)                      &mkp LCLK               &kp N                   &kp M  &kp COMMA           &kp DOT  &kp DELETE
+&kp ESCAPE          &kp LEFT_ALT            &kp LEFT_GUI  &tap_dance_lang_change  &lt 3 SPACE         &lt_to_layer_0 1 LANGUAGE_1      &lt_to_layer_0 2 ENTER  &lt_to_layer_0 6 SPACE                                      &mkp RCLK
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
@@ -108,10 +132,10 @@
 
         Other {
             bindings = <
-&trans      &kp LC(LG(LEFT_ARROW))  &kp LC(LG(UP_ARROW))  &kp LC(LG(RIGHT))  &trans                         &trans  &trans              &kp LC(UP_ARROW)    &trans         &trans
-&kp K_COPY  &kp K_PASTE             &kp LS(LG(V))         &kp LC(LG(V))      &kp K_CUT  &trans      &trans  &trans  &kp LC(LEFT_ARROW)  &kp LC(DOWN_ARROW)  &kp LC(RIGHT)  &trans
-&trans      &trans                  &trans                &kp LS(LG(N5))     &trans     &trans      &trans  &trans  &kp K_BACK          &trans              &kp K_FORWARD  &trans
-&trans      &trans                  &trans                &trans             &trans     &trans      &trans  &trans                                                         &trans
+&trans  &kp K_BACK          &kp LC(UP_ARROW)    &kp K_FORWARD        &trans                                    &trans                &kp LC(LG(KP_NUMBER_7))  &kp LC(LG(KP_NUMBER_8))  &kp LC(LG(KP_NUMBER_9))  &trans
+&trans  &kp LC(LEFT_ARROW)  &kp LG(LC(PERIOD))  &kp LC(RIGHT_ARROW)  &trans  &trans      &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp LC(LG(KP_NUMBER_4))  &kp LC(LG(KP_NUMBER_5))  &kp LC(LG(KP_NUMBER_6))  &trans
+&trans  &trans              &trans              &trans               &trans  &trans      &kp C_VOL_DN          &kp C_VOLUME_UP       &kp LC(LG(KP_NUMBER_1))  &kp LC(LG(KP_NUMBER_2))  &kp LG(LC(KP_NUMBER_3))  &trans
+&trans  &trans              &trans              &trans               &trans  &trans      &trans                &trans                                                                                           &trans
             >;
         };
 
